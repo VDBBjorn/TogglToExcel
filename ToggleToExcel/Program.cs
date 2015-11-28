@@ -58,10 +58,7 @@ namespace ToggleToExcel
                 {
                     if (item < projectHash[categorie].Keys.Count && date.Date == projectHash[categorie].Keys.ElementAt(item).Date)
                     {
-                        if (excelRange.Cells[row, col].Value == null)
-                        {
-                            excelRange.Cells[row, col] = projectHash[categorie][date.Date].Duration().TotalHours;
-                        }
+                        excelRange.Cells[row, col] = projectHash[categorie][date.Date].Duration().TotalHours;
                         item++;
                     }
                     date = date.AddDays(1);
